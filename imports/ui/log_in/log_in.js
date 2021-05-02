@@ -10,7 +10,7 @@ if (Meteor.isClient) {
         });
     }
 });
-Template. login.events({
+    Template. login.events({
     'submit form': function(event, template){
         event.preventDefault();
         var emailVar = template.find('#login-email').value;
@@ -18,7 +18,7 @@ Template. login.events({
         meteor.loginWithPassword(emailVar,passwordVar);
     }
 });
-Template.dashboard.events({
+    Template.dashboard.events({
     'click.logout': function(event){
         evewnt.preventDefault();
         Meteor.logout();
