@@ -1,5 +1,7 @@
 if (Meteor.isClient) {
     Template.register.events({
-        'submit form': function(event, template)
+        'submit form': function(event, template) {
+            
+        }
     })
 }
