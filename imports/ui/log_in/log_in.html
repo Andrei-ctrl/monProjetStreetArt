@@ -1,0 +1,29 @@
+<head>
+    <title>Custom Registration &amp; Login Form</title>
+<head>
+
+
+<body>
+    {{#if currentUser}}
+    <p>Vous êtes connecté</p>
+    {{else}}
+        {{>register}}
+        {{> login}}
+    {{/if}}
+</body>
+
+<template name='register'>
+    <form>
+        <input type="text" id="email">
+        <input type="password" id="password">
+        <input type="submit" value="Register">
+    </form>
+</template>
+
+<template name='login'>
+    <form>
+        <input type="text" id="email">
+        <input type="password" id="password">
+        <input type="submit" value="Login">
+    </form>
+</template>
