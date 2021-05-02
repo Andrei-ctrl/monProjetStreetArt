@@ -1,3 +1,5 @@
+import './log_in.html';
+
 if (Meteor.isClient) {
     Template.register.events({
         'submit form': function(event, template){
@@ -24,4 +26,4 @@ if (Meteor.isClient) {
         Meteor.logout();
     }
 });
-}
+};
