@@ -2,10 +2,9 @@
     <title>Custom Registration &amp; Login Form</title>
 <head>
 
-
 <body>
     {{#if currentUser}}
-    <p>Vous êtes connecté</p>
+        {{> dashboard}}
     {{else}}
         {{>register}}
         {{> login}}
@@ -26,4 +25,11 @@
         <input type="password" id="password">
         <input type="submit" value="Login">
     </form>
+</template>
+
+<template name='dashboard'>
+    <p>Vous êtes connecté</p>
+    <p>
+        <a href="#" class='logout'>Logout</a>></a>
+    </p>
 </template>
