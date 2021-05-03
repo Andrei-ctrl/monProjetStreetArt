@@ -12,5 +12,9 @@ Meteor.methods({
         });
         console.log('success!');
         return ajout;
+    },
+    'retournerObjets' () {
+        let objets = ObjetsCollection.find({});
+        return objets;
     }
 })

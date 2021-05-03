@@ -3,7 +3,9 @@
 
 <template name = 'collection'>
     <ul>
-        {{> element_collection}}
+        {{#each objets}} 
+            {{> element_collection}} 
+        {{/each}}
     </ul>
     <button id="ajouter">Ajouter une image ou une vidéo<button>
 </template>
