@@ -1,6 +1,6 @@
-<head>
+<!--<head>
     <title>Custom Registration &amp; Login Form</title>
-<head>
+<head>-->
 
 <body>
     {{#if currentUser}}
@@ -11,7 +11,7 @@
     {{/if}}
 </body>
 
-<template name='register'>
+<template name="register">
     <form>
         <input type="text" id="email">
         <input type="password" id="password">
@@ -19,7 +19,7 @@
     </form>
 </template>
 
-<template name='login'>
+<template name="login">
     <form>
         <input type="text" id="email">
         <input type="password" id="password">
@@ -27,9 +27,9 @@
     </form>
 </template>
 
-<template name='dashboard'>
+<template name="dashboard">
     <p>Vous êtes connecté</p>
     <p>
-        <a href="#" class='logout'>Logout</a>></a>
+        <a href="#" class='logout'>Logout</a>
     </p>
 </template>

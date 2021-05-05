@@ -1,0 +1,12 @@
+<!-- Le media image : fichier JPEG, date, localisation -->
+<!-- Le media vidéo : fichier MP4, date, localisation -->
+
+<template name="collections">
+    <ul>
+        {{#each objets}} 
+            {{> element_collection}} 
+        {{/each}}
+    </ul>
+    <button id="ajouter">Ajouter une image ou une vidéo</button>
+</template>
+
