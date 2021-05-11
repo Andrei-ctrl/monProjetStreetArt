@@ -28,21 +28,27 @@ Template.creercompte.events({
                     (error) => {
                         if (error) {
                             alert(error.message);
-                        } else{
-                            setTimeout(() => FlowrouterGo('apropos'), 200);
+                        } else {
+                            setTimeout(() => FlowrouterGo('accueilLog'), 200);
                         }
                     });
-                } else{
+                } else {
                     event.preventDefault();
                     pMdp.innerHTML = 'Mot de passe trop court!';
+                    pMdp.style.color = 'red';
                     pMail.innerHTML = '';
+                    pMail.style.color = 'red';
                     pUser.innerHTML = '';
+                    pUser.style.color = 'red';
                 }
             } else{
                 event.preventDefault();
                 pMdp.innerHTML = 'Vos mots de passe ne correspondent pas!';
+                pMdp.style.color = 'red';
                 pMail.innerHTML = '';
+                pMail.style.color = 'red';
                 pUser.innerHTML = '';
+                pUser.style.color = 'red';
             }
         } else {
             event.preventDefault();
