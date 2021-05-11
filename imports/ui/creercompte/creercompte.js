@@ -30,12 +30,9 @@ Template.creercompte.events({
                         if (error) {
                             alert(error.message);
                         } else {
-                            setTimeout(() => FlowrouterGo('accueilLog'), 200);
+                            setTimeout(() => Flowrouter.go('accueilLog'), 200);
                         }
                     });
-                
-                // Si le compte a été crée avec succès, on redigire directement vers l'acceuilLog.
-                FlowRouter.go('accueilLog');
 
                 } else {
                     event.preventDefault();
