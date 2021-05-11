@@ -1,5 +1,5 @@
-import './maps-geoloc.html'
-import './maps-geoloc.css'
+import './maps-geoloc.html';
+import './maps-geoloc.css';
 
 if (Meteor.isClient) {
     var MAP_ZOOM = 15;

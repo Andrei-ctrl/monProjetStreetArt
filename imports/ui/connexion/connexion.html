@@ -1,0 +1,22 @@
+<template name="connexion">
+    
+    <div class="contenu">
+        {{#if currentUser}}
+        <h3 class="black">Vous êtes connecté ! Retourner à la page d' <a href="./ouverture">accueil</a>.</h3>
+        {{else}}
+          <form>
+            <h2>Se connecter</h2>
+            <p>Adresse E-mail:</p>
+            <input type="email" name="email" id="email" placeholder="Adresse E-mail">
+            <p>Mot de passe:</p>
+            <input type="password" name="password" id="password" placeholder="Mot de passe">
+            <br>
+            <br>
+            <button type="submit" id="connexion-btn" class="connect-btn">Se connecter</button>
+            <br>
+            <br>
+            <p>Vous n'avez pas de compte ?<a href="./creercompte"> Créer un compte</a></p>
+          </form>
+        {{/if}}
+    </div> 
+</template>
