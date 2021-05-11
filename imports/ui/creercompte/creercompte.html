@@ -1,7 +1,7 @@
 <template name="creercompte">
   <div class="contenu">
       {{#if currentUser}}
-      <h3 class="black">Vous êtes connecté ! Retourner à la page d' <a href="./ouverture">accueil</a>.</h3>
+      <h3 class="black">Vous êtes connecté ! <a href="./accueilLog">Go</a></h3>
       {{else}}
       <form>
           <h2>Créer votre compte!</h2>
@@ -18,7 +18,7 @@
         <input type="password" name="password2" id="password2" placeholder="Confirmez votre mot de passe">
         <br>
         <br>
-        <button type="submit" id="creercompte" class="connect-btn">Créer un compte</button>
+        <button type="submit" id="creercompte" class="creercompte">Créer un compte</button>
         <p>Vous avez déjà un compte ? <button id="seConnecter">Se connecter</button></p>
       </form>
       {{/if}}

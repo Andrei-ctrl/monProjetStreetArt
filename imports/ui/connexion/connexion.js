@@ -16,7 +16,7 @@ Template.connexion.events({
         if (error){
             alert(error.message)
         } else{
-            SetTimeout(() => FlowrouterGo('accueilLog'), 200); 
+            SetTimeout(() => Flowrouter.go('accueilLog'), 200); 
         }
       });
     }
