@@ -45,7 +45,7 @@ Template.creercompte.events({
                 pMail.innerHTML = '';
                 pUser.innerHTML = '';
             }
-        } else{
+        } else {
             event.preventDefault();
             pMdp.innerHTML = 'Veuillez remplir les champs!';
             pMail.innerHTML = 'Veuillez remplir les champs!';
