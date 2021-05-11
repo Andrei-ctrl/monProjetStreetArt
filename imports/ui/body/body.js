@@ -11,7 +11,7 @@ import '../accueilLog/accueilLog.js';
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Accounts } from 'meteor/accounts-base';
-import { meteor } from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 
 Template.connexion.events({
 
@@ -23,7 +23,7 @@ Template.connexion.events({
             if (error){
                 alert(error.message)
             } else{
-                SetTimeout(() => FlowrouterGo('apropos'), 200); 
+                SetTimeout(() => FlowrouterGo('accueil'), 200); 
             }
         });
     }

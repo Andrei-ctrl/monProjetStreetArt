@@ -2,6 +2,11 @@
     <h3>Bienvenue sur Street Art !</h3>
     <h4>Vous pouvez ici ajouter des oeuvres de Street Art à la carte et créer des parcours entre elles !</h4>
     <br>
+    {{#if currentUser}} Bonjour {{utilisateur}}
+    <button id="logout">Se deconnecter</button>
+    {{else}}
+    <button id="connexion-btn">Se connecter</button>
+
     <br>
     {{>map}}
 </template>
