@@ -23,9 +23,9 @@ Template.connexion.events({
             if (error){
                 alert(error.message)
             } else{
-                SetTimeout(() => FlowrouterGo('accueil'), 200); 
+                SetTimeout(() => FlowrouterGo('apropos'), 200); 
             }
         });
     }
-
+    
 });
