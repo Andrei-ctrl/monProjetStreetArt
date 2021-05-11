@@ -22,8 +22,6 @@ Template.connexion.events({
     }
   });
 
-
-
   Template.connexion.events({
     'click #creercompte' (event) {
       event.preventDefault();
