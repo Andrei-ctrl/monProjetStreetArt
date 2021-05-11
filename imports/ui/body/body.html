@@ -1,5 +1,10 @@
 <template name='app_body'>
     <h2>Street Art</h2>
+    {{#if currentUser}} Bonjour {{utilisateur}}
+    <button id="logout">Se deconnecter</button>
+    {{else}}
+    <button id="connexion-btn">Se connecter</button>
+
 
     {{> Template.dynamic template=main}}
 </template>
