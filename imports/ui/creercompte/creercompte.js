@@ -33,6 +33,10 @@ Template.creercompte.events({
                             setTimeout(() => FlowrouterGo('accueilLog'), 200);
                         }
                     });
+                
+                // Si le compte a été crée avec succès, on redigire directement vers l'acceuilLog.
+                FlowRouter.go('accueilLog');
+
                 } else {
                     event.preventDefault();
                     pMdp.innerHTML = 'Mot de passe trop court!';

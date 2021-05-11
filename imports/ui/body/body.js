@@ -23,7 +23,7 @@ Template.connexion.events({
             if (error){
                 alert(error.message)
             } else{
-                SetTimeout(() => FlowrouterGo('apropos'), 200); 
+                SetTimeout(() => Flowrouter.go('accueilLog'), 200); 
             }
         });
     }
