@@ -1,13 +1,12 @@
+import './creercompte.html';
+
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Accounts } from 'meteor/accounts-base';
 import { meteor } from 'meteor/meteor';
 
-import './creercompte.html';
-
 Template.creercompte.events({
     
-
     'click #creercompte' (event) {
         event.preventDefault();
         let nom = document.getElementById('username').value;
@@ -48,9 +47,19 @@ Template.creercompte.events({
         } else {
             event.preventDefault();
             pMdp.innerHTML = 'Veuillez remplir les champs!';
+            pMdp.style.color = 'red';
             pMail.innerHTML = 'Veuillez remplir les champs!';
+            pMail.style.color = 'red';
             pUser.innerHTML = 'Veuillez remplir les champs!';
+            pUser.style.color = 'red';
         }
     },
 
 })
+
+Template.creercompte.events({
+    'click #seConnecter' (event) {
+      event.preventDefault();
+      FlowRouter.go('connexion');
+    }
+  });

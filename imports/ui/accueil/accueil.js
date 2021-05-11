@@ -7,7 +7,6 @@ import {Template} from 'meteor/templating';
 Template.accueil.events({
   'click #LogIn' (event) {
     event.preventDefault();
-    console.log('Hello')
     FlowRouter.go('connexion');
   }
 });
