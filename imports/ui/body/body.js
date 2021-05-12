@@ -7,3 +7,4 @@ import '../accueil/accueil.js';
 import '../creercompte/creercompte.js';
 import '../connexion/connexion.js';
 import '../accueilLog/accueilLog.js';
+import '../profil/profil.js';

@@ -11,8 +11,8 @@ Template.accueilLog.helpers({
 })
 
 Template.accueilLog.events({
-    'click #logout'(event){
+    'click #profil'(event){
     event.preventDefault();
-    FlowRouter.go('accueil');
+    FlowRouter.go('profil');
     }
 })

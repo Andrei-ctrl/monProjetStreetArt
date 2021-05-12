@@ -4,8 +4,16 @@
     height: 500px;
   }
 
-#logout {
+#profil {
   position: absolute;
+  border: black solid 1px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-image: url(https://www.flaticon.com/svg/vstatic/svg/14/14660.svg?token=exp=1620844341~hmac=37aeb175886ac8fb91c2c1bb4a3dda3e);
+  background-size: 40px;
+  background-repeat: no-repeat ;
+  background-position: center;
   top: 30px;
   right: 30px;
 }
