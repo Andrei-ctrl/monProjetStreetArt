@@ -6,15 +6,21 @@ export const ObjetsCollection = new Mongo.Collection('objets_collection');
 
 // Ecriture des méthodes
 Meteor.methods({
-    ajouterObjet : function(image, video) {
+    'retournerOeuvres' () {
+        let oeuvres = ObjetsCollection.find({});
+        return oeuvres;
+    },
+
+    ajouterOeuvre: function(lat, lng, image) {
         let ajout = ObjetsCollection.insert({
-            contenu: image, video
+            contenu: lat, lng, image
         });
         console.log('success!');
         return ajout;
     },
-    'retournerObjets' () {
-        let objets = ObjetsCollection.find({});
-        return objets;
+
+    supprimerOeuvre: function(id) {
+       let remove = ObjetsCollection.remove(id);
+       return remove;
     }
 })

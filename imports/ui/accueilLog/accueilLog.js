@@ -14,5 +14,9 @@ Template.accueilLog.events({
     'click #profil'(event){
     event.preventDefault();
     FlowRouter.go('profil');
+    },
+    'click #ajouterOeuvre'(event){
+    event.preventDefault();
+    FlowRouter.go('ajouterOeuvre');
     }
 })
