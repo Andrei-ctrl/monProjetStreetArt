@@ -29,7 +29,7 @@ Template.creercompte.events({
                         if (error) {
                             alert(error.message);
                         } else {
-                            setTimeout(() => Flowrouter.go('accueilLog'), 200);
+                            setTimeout(() => FlowRouter.go('accueilLog'), 200);
                         }
                     });
 
