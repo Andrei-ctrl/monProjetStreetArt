@@ -16,14 +16,11 @@ Template.ajouterOeuvre.helpers({
 
 Template.ajouterOeuvre.events({
     'click #ajouterOeuvrePActuelle': function() {
-        var latLng = Geolocation.latLng();
-        let lat = latLng.lat;
-        let lng = latLng.lng;
-        let image;
-        alert("lat : " + lat + " lng : " + lng);
+        //Session.set('confirmationModal', true); // Show modal
+
         //const nouvelObjet = prompt('Ajouter une image !');
         // Appel de la méthode
-        Meteor.call('ajouterOeuvre', lat, lng, image);
+        //Meteor.call('ajouterOeuvre', lat, lng, image);
     },
     'click #ajouterOeuvreNewPos': function() {
         let lat;
@@ -32,7 +29,17 @@ Template.ajouterOeuvre.events({
         const nouvelObjet = prompt('Entrez un nouvel élément !');
         // Appel de la méthode
         Meteor.call('ajouterOeuvre', lat, lng, image);
+    },
+    'click #ok': function() {
+        let lat;
+        let lng;
+        let image;
+        const nouvelObjet = prompt('Entrez un nouvel élément !');
+        // Appel de la méthode
+        Meteor.call('ajouterOeuvre', lat, lng, image);
+        //Session.set('confirmationModal', false); // Show modal
+    },
+    'click #annuler': function() {
+        //Session.set('confirmationModal', false); // Show modal
     }
-
-
 });
