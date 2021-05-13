@@ -33,8 +33,8 @@ Template.ajouterOeuvre.events({
     'click #ok': function() {
         let lat;
         let lng;
-        let image;
-        const nouvelObjet = prompt('Entrez un nouvel élément !');
+        var latLng = Geolocation.latLng();
+        const image = prompt('Entrez un nouvel élément !');
         // Appel de la méthode
         Meteor.call('ajouterOeuvre', lat, lng, image);
         //Session.set('confirmationModal', false); // Show modal
