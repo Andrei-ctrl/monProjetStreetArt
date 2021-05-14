@@ -1,1 +1,0 @@
-import './element_collection.html';
