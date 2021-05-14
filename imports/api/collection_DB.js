@@ -13,7 +13,9 @@ Meteor.methods({
 
     ajouterOeuvre: function(lat, lng, image) {
         let ajout = ObjetsCollection.insert({
-            contenu: lat, lng, image
+                lat: lat,
+                lng: lng,
+                image: image,
         });
         console.log('success!');
         return ajout;

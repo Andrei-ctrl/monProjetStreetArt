@@ -1,5 +1,6 @@
 import './maps-geoloc.html';
 import './maps-geoloc.css';
+import { ObjetsCollection } from '../../api/collection_DB';
 
 if (Meteor.isClient) {
     var MAP_ZOOM = 15;
@@ -36,6 +37,15 @@ if (Meteor.isClient) {
           map.instance.setCenter(marker.getPosition());
           map.instance.setZoom(MAP_ZOOM);
         });
+        var listOeuvres = ObjetsCollection.find({}).fetch();
+        console.log(listOeuvres);
+        listOeuvres.forEach(oeuvre => {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
+            map: map.instance,
+            
+          });
+        });
       });
     });
   
@@ -56,4 +66,6 @@ if (Meteor.isClient) {
       }
     });
   }
+
+  
   
