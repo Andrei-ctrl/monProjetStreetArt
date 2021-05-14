@@ -41,9 +41,5 @@ Template.ajouterOeuvre.events({
     },
     'click #annuler': function() {
         //Session.set('confirmationModal', false); // Show modal
-    },
-    'click #retour'(event){
-        event.preventDefault();
-        FlowRouter.go('accueilLog');
-    },
+    }
 });
