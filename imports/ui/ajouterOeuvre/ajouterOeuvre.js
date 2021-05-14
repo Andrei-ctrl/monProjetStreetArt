@@ -33,6 +33,4 @@ Template.ajouterOeuvre.events({
         // Appel de la méthode
         Meteor.call('ajouterOeuvre', lat, lng, image);
     }
-
-
 });
