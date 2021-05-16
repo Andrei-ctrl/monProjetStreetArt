@@ -2,6 +2,8 @@ import './maps-geoloc.html';
 import './maps-geoloc.css';
 import { ObjetsCollection } from '../../api/collection_DB';
 
+isAccueilMap = true;
+
 if (Meteor.isClient) {
     var MAP_ZOOM = 15;
     
@@ -37,15 +39,14 @@ if (Meteor.isClient) {
           map.instance.setCenter(marker.getPosition());
           map.instance.setZoom(MAP_ZOOM);
         });
-        var listOeuvres = ObjetsCollection.find({}).fetch();
-        console.log(listOeuvres);
-        listOeuvres.forEach(oeuvre => {
-          marker = new google.maps.Marker({
-            position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
-            map: map.instance,
-            
-          });
-        });
+
+        displayMarkers(map);
+
+        //Add map listener: add marker
+        google.maps.event.addListener(map.instance, 'click', function (event) {
+          placeMarkerAndPanTo(event.latLng, map.instance);
+      });
+
       });
     });
   
@@ -67,5 +68,20 @@ if (Meteor.isClient) {
     });
   }
 
-  
-  
+  function displayMarkers(map) {
+    var listOeuvres = ObjetsCollection.find({}).fetch();
+    console.log(listOeuvres);
+    listOeuvres.forEach(oeuvre => {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
+        map: map.instance,
+      });
+    });
+  }
+  function placeMarkerAndPanTo(latLng, map) {
+    new google.maps.Marker({
+      position: latLng,
+      map: map,
+    });
+    map.panTo(latLng);
+  }
