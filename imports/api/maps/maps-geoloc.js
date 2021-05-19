@@ -73,8 +73,6 @@ if (Meteor.isClient) {
     console.log(listOeuvres);
     listOeuvres.forEach(oeuvre => {
       marker = new google.maps.Marker({
-        // Je distingue le marqueur de la position actuelle de la position des oeuvres
-        icon : 'http://maps.google.com/mapfiles/marker_green.png', 
         position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
         map: map.instance,
       });
