@@ -96,7 +96,7 @@ Template.creercompte.events({
           if (err) {
             Swal.fire('Error!',err.message,'error');
           } else {
-            Swal.fire('Success!','The account was created!','success');
+            Swal.fire('Success!','Le compte a été créé!','success');
             setTimeout(() => FlowRouter.go('accueilLog'), 200);
           }
         });
@@ -121,7 +121,7 @@ Template.creercompte.events({
     if (value && value !== '') {
       return true;
     }
-    Swal.fire('Error!','Please fill in all fields','error');
+    Swal.fire('Error!','Merci de remplir tous les champs.','error');
     return false;
   };
 
@@ -131,14 +131,14 @@ Template.creercompte.events({
     if (filter.test(value)) {
       return true;
     }
-    Swal.fire('Error!','Please use a valid email address','error');
+    Swal.fire('Error!','Veuillez utiliser une adresse mail valide.','error');
     return false;
   };
 
   //Check Password Field
   isValidPassword = function (password) {
     if (password.length < 11) {
-      Swal.fire('Error!','Password must be at least 11 characters','error');
+      Swal.fire('Error!','Le mot de passe doit contenir au moins 11 caractères.','error');
       return false;
     }
     return true;
@@ -150,7 +150,7 @@ Template.creercompte.events({
       return false;
     }
     if (password !== confirm) {
-      Swal.fire('Error!','Passwords don not match','error');
+      Swal.fire('Error!','Les mots de passe ne correspondent pas.','error');
       return false;
     }
     return true;

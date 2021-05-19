@@ -45,7 +45,7 @@ Template.connexion.events({
         event.target.password.value = password;
         Swal.fire('Error!',err.message,'error');
       } else {
-        Swal.fire('Success!','Login Successful!','success');
+        Swal.fire('Success!','Connexion réussie!','success');
         setTimeout(() => FlowRouter.go('accueilLog'), 200);
       }
     });
