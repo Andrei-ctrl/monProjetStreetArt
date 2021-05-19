@@ -73,11 +73,20 @@ if (Meteor.isClient) {
     console.log(listOeuvres);
     listOeuvres.forEach(oeuvre => {
       marker = new google.maps.Marker({
+        // Je distingue le marqueur de la position actuelle de la position des oeuvres
+        icon : 'http://maps.google.com/mapfiles/marker_green.png', 
         position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
         map: map.instance,
       });
-    });
+      /*marker.addListener('click', surClic);
+      function surClic() {
+          marker.openInfoWindowHtml(
+          '<br /><img src="images/place-bellecour-miniature.jpg" alt="" />' 
+      );
+      }*/
+    })
   }
+
   function placeMarkerAndPanTo(latLng, map) {
     new google.maps.Marker({
       position: latLng,
