@@ -50,5 +50,9 @@ Template.ajouterOeuvre.events({
         const nouvelObjet = prompt('Entrez un nouvel élément !');
         // Appel de la méthode
         Meteor.call('ajouterOeuvre', lat, lng, image);
-    }
+    },
+    'click #retour'(event){
+    event.preventDefault();
+    FlowRouter.go('accueilLog');
+    },
 });
