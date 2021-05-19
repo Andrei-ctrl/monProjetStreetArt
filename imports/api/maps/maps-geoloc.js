@@ -78,12 +78,14 @@ if (Meteor.isClient) {
         position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
         map: map.instance,
       });
-      /*marker.addListener('click', surClic);
-      function surClic() {
-          marker.openInfoWindowHtml(
-          '<br /><img src="images/place-bellecour-miniature.jpg" alt="" />' 
-      );
-      }*/
+      const contentString = `<img src="${oeuvre.image}">`;
+      const infowindow = new google.maps.InfoWindow({
+        content: contentString,
+      });
+      marker.addListener('click', () => {
+        infowindow.open(map, marker);
+      });
+
     })
   }
 
