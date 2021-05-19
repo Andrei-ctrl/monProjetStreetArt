@@ -34,7 +34,7 @@ Template.ajouterOeuvre.events({
               title: 'Vous avez sélectionné cette image',
               imageUrl: e.target.result,
               imageAlt: 'The uploaded picture',
-              confirmButtonText: 'suivant',
+              confirmButtonText: 'Suivant',
             }).then((result) => {
               if (result.isConfirmed) {
                 Swal.fire({

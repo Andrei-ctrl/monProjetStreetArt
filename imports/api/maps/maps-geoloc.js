@@ -78,17 +78,14 @@ if (Meteor.isClient) {
         position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
         map: map.instance,
       });
-      //marker.addListener('click', surClic);
-    });
+      /*marker.addListener('click', surClic);
+      function surClic() {
+          marker.openInfoWindowHtml(
+          '<br /><img src="images/place-bellecour-miniature.jpg" alt="" />' 
+      );
+      }*/
+    })
   }
-
-  /*function surClic() {
-    marker.openInfoWindowHtml(
-      '<strong>Place Bellecour</strong>' +
-      '<br /><img src="images/place-bellecour-miniature.jpg" alt="" />' +
-      '<br /><a href="http://fr.wikipedia.org/wiki/Place_Bellecour">Voir l\'article sur Wikipedia (fr)</a>'
-  );
-  }*/
 
   function placeMarkerAndPanTo(latLng, map) {
     new google.maps.Marker({
