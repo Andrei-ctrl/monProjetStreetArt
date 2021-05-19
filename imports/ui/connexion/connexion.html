@@ -1,5 +1,5 @@
 <template name="connexion">
-    
+
     <div class="contenu">
         {{#if currentUser}}
         <h3 class="black">Vous êtes connecté ! <a href="./accueilLog">Go</a></h3>
@@ -19,5 +19,19 @@
             <p>Vous n'avez pas de compte ? <button id="creercompte">Créer un compte</button></p>
           </form>
         {{/if}}
-    </div> 
+    </div>
+</template>
+
+<template name="login">
+  <form class="form-signin">
+        <h2 class="form-signin-heading">StreetArt Log In</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+        <br>
+        <p>No Account? <a href="/creercompte">Create an Account</a></p>
+      </form>
 </template>
