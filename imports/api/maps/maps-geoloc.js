@@ -1,11 +1,13 @@
 import './maps-geoloc.html';
 import './maps-geoloc.css';
-import { ObjetsCollection } from '../../api/collection_DB';
+import { Oeuvres } from '../../api/collection_DB';
 
 isAccueilMap = true;
 
 if (Meteor.isClient) {
     var MAP_ZOOM = 15;
+
+    var prermiereExecution = true;
     
     Meteor.startup(function() {
       GoogleMaps.load();
@@ -35,9 +37,13 @@ if (Meteor.isClient) {
             marker.setPosition(latLng);
           }
   
-          // Center and zoom the map view onto the current position.
-          map.instance.setCenter(marker.getPosition());
-          map.instance.setZoom(MAP_ZOOM);
+          // Cela permet d'éviter que la page se rercharge et qu'un zoom et un center soit fait plus d'une fois
+          if (prermiereExecution) {
+            // Center and zoom the map view onto the current position.
+            map.instance.setCenter(marker.getPosition());
+            map.instance.setZoom(MAP_ZOOM);
+            prermiereExecution = false;
+          }
         });
 
         displayMarkers(map);
@@ -68,7 +74,7 @@ if (Meteor.isClient) {
   }
 
   function displayMarkers(map) {
-    var listOeuvres = ObjetsCollection.find({}).fetch();
+    var listOeuvres = Oeuvres.find({}).fetch();
     console.log(listOeuvres);
     listOeuvres.forEach(oeuvre => {
       marker = new google.maps.Marker({

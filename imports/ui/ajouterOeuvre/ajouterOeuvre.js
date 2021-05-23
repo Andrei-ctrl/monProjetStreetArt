@@ -5,13 +5,13 @@ import '../../api/maps/maps-geoloc.js';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 // importer fichier
-import { ObjetsCollection } from '../../api/collection_DB';
+import { Oeuvres } from '../../api/collection_DB';
 
 const Swal = require('sweetalert2');
 
 Template.ajouterOeuvre.helpers({
     objets: function() {
-        return ObjetsCollection.find({})
+        return Oeuvres.find({})
     }
 })
 
