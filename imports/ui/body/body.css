@@ -1,0 +1,34 @@
+#div1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: block;
+    border: solid black 0.5px;
+    background-image: url('https://addict-culture.com/wp-content/uploads/2019/04/Keith-Haring-Brooklyn-Museum_luca-conti-2011-500x375.jpg');
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+#p1 {
+    text-align: center;
+    margin-top: -1px;
+    color: white;
+    font-family: Impact, fantasy;
+    font-size: 35px;
+    text-shadow: 0 0 8px #000;
+    text-shadow: #000000 0.5px 0.5px, #000000 -0.5px 0.5px, #000000 -0.5px -0.5px, #000000 0.5px -0.5px;
+    letter-spacing: 0mm;
+}
+
+#p2 {
+    text-align: center;
+    margin-top: -52px;
+    color: white;
+    font-family: Impact, fantasy;
+    font-size: 70px;
+    text-shadow: 0 0 8px #000;
+    text-shadow: #000000 0.5px 0.5px, #000000 -0.5px 0.5px, #000000 -0.5px -0.5px, #000000 0.5px -0.5px; 
+}

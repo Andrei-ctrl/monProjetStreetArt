@@ -14,6 +14,7 @@ body#form_layout {
 .form-signin .checkbox .form-signup .form-signup-heading,
 .form-signup .checkbox {
   margin-bottom: 10px;
+  font-family: Impact, fantasy;
 }
 
 .form-signin .form-control, .form-signup .form-control {

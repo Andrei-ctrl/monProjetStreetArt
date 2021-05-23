@@ -1,4 +1,5 @@
 import './body.html';
+import './body.css';
 //import '../collection/collections.js';
 //import '../element_collection/element_collection.js';
 import '../../api/maps/maps-geoloc.js';
