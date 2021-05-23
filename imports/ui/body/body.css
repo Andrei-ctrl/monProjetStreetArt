@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 
-.wrapper {
+#wrapper {
   display: flex;
   justify-content: center;
 }
 
-.cta {
+#cta {
     display: flex;
     padding: 10px 10px;
     text-decoration: none;
@@ -53,21 +53,21 @@
         text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px; 
     }
 
-.cta:focus {
+#cta:focus {
    outline: none; 
 }
 
-.cta:hover {
+#cta:hover {
     transition: 0.5s;
     box-shadow: 4px 4px 0 #FBC638;
 }
 
-.cta span:nth-child(2) {
+#cta span:nth-child(2) {
     transition: 0.5s;
     margin-right: 0px;
 }
 
-.cta:hover  span:nth-child(2) {
+#cta:hover  span:nth-child(2) {
     transition: 0.5s;
     margin-right: 10px;
 }
@@ -85,16 +85,16 @@ path.two {
     transform: translateX(-30%);
 }
 
-.cta:hover path.three {
+#cta:hover path.three {
     animation: color_anim 1s infinite 0.2s;
 }
 
-.cta:hover path.one {
+#cta:hover path.one {
     transform: translateX(0%);
     animation: color_anim 1s infinite 0.6s;
 }
 
-.cta:hover path.two {
+#cta:hover path.two {
     transform: translateX(0%);
     animation: color_anim 1s infinite 0.4s;
 }
