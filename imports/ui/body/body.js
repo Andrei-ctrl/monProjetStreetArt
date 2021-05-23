@@ -13,8 +13,8 @@ import '../ajouterOeuvre/ajouterOeuvre.js';
 import '../descriptif/descriptif.js';
 
 Template.body.events({
-    'click #div1'(event){
+    'click .wrapper'(event){
     event.preventDefault();
-    FlowRouter.go('descritpif');
+    FlowRouter.go('descriptif');
     }
 })

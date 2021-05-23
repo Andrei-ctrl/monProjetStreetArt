@@ -1,1 +1,1 @@
-import './descriptif.html'
+import './descriptif.html';
