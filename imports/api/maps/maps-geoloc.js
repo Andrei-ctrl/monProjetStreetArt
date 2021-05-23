@@ -46,7 +46,6 @@ if (Meteor.isClient) {
         /*google.maps.event.addListener(map.instance, 'click', function (event) {
           placeMarkerAndPanTo(event.latLng, map.instance);
         });*/
-
       });
     });
   
