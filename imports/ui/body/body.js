@@ -12,6 +12,7 @@ import '../profil/profil.js';
 import '../ajouterOeuvre/ajouterOeuvre.js';
 import '../descriptif/descriptif.js';
 import '../creerParcours/creerParcours.js';
+import '../choisirParcours/choisirParcours.js';
 
 Template.body.events({
     'click #wrapper'(event){
