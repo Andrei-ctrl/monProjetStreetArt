@@ -43,9 +43,9 @@ if (Meteor.isClient) {
         displayMarkers(map);
 
         //Add map listener: add marker
-        google.maps.event.addListener(map.instance, 'click', function (event) {
+        /*google.maps.event.addListener(map.instance, 'click', function (event) {
           placeMarkerAndPanTo(event.latLng, map.instance);
-      });
+        });*/
 
       });
     });

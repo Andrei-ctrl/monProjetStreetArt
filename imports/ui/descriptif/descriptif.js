@@ -1,0 +1,1 @@
+import './descriptif.html'

@@ -10,4 +10,11 @@ import '../connexion/connexion.js';
 import '../accueilLog/accueilLog.js';
 import '../profil/profil.js';
 import '../ajouterOeuvre/ajouterOeuvre.js';
+import '../descriptif/descriptif.js';
 
+Template.body.events({
+    'click #div1'(event){
+    event.preventDefault();
+    FlowRouter.go('descritpif');
+    }
+})
