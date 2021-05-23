@@ -17,5 +17,13 @@ Template.accueilLog.events({
     'click #ajouterOeuvre'(event){
         event.preventDefault();
         FlowRouter.go('ajouterOeuvre');
+    },
+    'click #creerParcours'(event){
+        event.preventDefault();
+        FlowRouter.go('creerParcours');
+    },
+    'click #choisirParcours'(event){
+        event.preventDefault();
+        FlowRouter.go('choisirParcours');
     }
 })

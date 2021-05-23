@@ -1,0 +1,27 @@
+<template name='creerParcours'>
+    <!-- C'est le bouton qui permet d'enregistrer la lise des oeuvres / le parcours crée -->
+    <button id="confirmerParcours">Enregistrer le parcours</button>
+    <button id="retour">Retour</button>
+    <br>
+    <h3>Crée ton parcours !</h3>
+    <h1>Vous pouvez ici créer des parcours en reliant les oeuvres de Street Art autour de vous !</h1>
+    <br>
+    <!-- Ce ul contient la liste des oeuvres -->
+    <ul>
+        {{#each oeuvres}}
+            {{> oeuvre }}
+        {{/each}}
+    </ul>
+
+    <div class="map-container">
+        {{#unless geolocationError}}
+          {{> googleMap name="map" options=mapOptions}}
+        {{else}}
+          Geolocation failed: {{geolocationError}}
+        {{/unless}}
+    </div>
+</template>
+
+<template name="oeuvre">
+    <li>{{contenu}}</li>
+</template>

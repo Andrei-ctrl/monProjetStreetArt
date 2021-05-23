@@ -11,6 +11,7 @@ import '../accueilLog/accueilLog.js';
 import '../profil/profil.js';
 import '../ajouterOeuvre/ajouterOeuvre.js';
 import '../descriptif/descriptif.js';
+import '../creerParcours/creerParcours.js';
 
 Template.body.events({
     'click #wrapper'(event){
