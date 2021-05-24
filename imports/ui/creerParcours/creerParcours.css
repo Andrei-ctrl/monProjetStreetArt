@@ -28,3 +28,14 @@ h4 {
   font-family: FreeMono, monospace;
   font-weight: bold;
 }
+
+.imageCSS {
+  border: solid 1px lightblue;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+ol {
+  font-family: FreeMono, monospace;
+}
