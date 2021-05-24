@@ -1,4 +1,5 @@
 import './profil.html';
+import './profil.css';
 
 Template.profil.helpers({
     utilisateur: () => Meteor.user().username,

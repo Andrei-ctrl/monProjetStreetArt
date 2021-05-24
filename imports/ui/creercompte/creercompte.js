@@ -1,4 +1,5 @@
 import './creercompte.html';
+import './creercompte.css';
 import "../stylesheet/signin-up.css"
 
 import { Template } from 'meteor/templating';
