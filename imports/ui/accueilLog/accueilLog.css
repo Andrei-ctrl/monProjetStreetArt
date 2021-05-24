@@ -33,10 +33,25 @@ h3 {
   position: absolute;
   left: 0px;
   margin-left: 19px;
+  width: 180px;
+  height: 40px;
+  color: black;
+  border: red solid 2px;
+  border-radius: 20px;
+  font-family: FreeMono, monospace;
+  font-weight: bold;
+
 }
 
 #creerParcours {
   display: inline-block;
+  width: 180px;
+  height: 40px;
+  color: black;
+  border: #FBC638 solid 2px;
+  border-radius: 20px;
+  font-family: FreeMono, monospace;
+  font-weight: bold;
 }
 
 #choisirParcours {
@@ -44,4 +59,11 @@ h3 {
   position: absolute;
   right: 0px;
   margin-right: 19px;
+  width: 180px;
+  height: 40px;
+  color: black;
+  border: blue solid 2px;
+  border-radius: 20px;
+  font-family: FreeMono, monospace;
+  font-weight: bold;
 }
