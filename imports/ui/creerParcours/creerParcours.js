@@ -118,7 +118,7 @@ function displayMarkers(map) {
 }
 
 function addMarkerToList(lat, lng, id, image) {
-    const oeuvreText =  'Position de l\'oeuvre : ' + ' ' + `longitude : ${lat}` + ' - ' + `latitude : ${lat}`  + '<br>' + `<img src="${image}" class="imageCSS">`;
+    const oeuvreText =  'Position de l\'oeuvre : ' + ' ' + `latitude : ${lat}` + ' - ' + `longitude : ${lng}`  + '<br>' + `<img src="${image}" class="imageCSS">`;
     listeOeuvres.push(oeuvreText);
     listeOeuvresId.push(id);
     console.log(listeOeuvres, listeOeuvresId);
