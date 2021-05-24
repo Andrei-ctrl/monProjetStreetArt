@@ -125,15 +125,15 @@ function displayMarkers(map) {
         });
         google.maps.event.addListener(marker, 'click', (function(marker) {
             return function() {
-                addMarkerToList(oeuvre.lat, oeuvre.lng, oeuvre._id);
+                addMarkerToList(oeuvre.lat, oeuvre.lng, oeuvre._id, oeuvre.image);
                 marker.setIcon('http://maps.google.com/mapfiles/marker_orange.png');
             }
         })(marker));
     })
 }
 
-function addMarkerToList(lat, lng, id) {
-    const oeuvreText = lat + ' ' + lng + ' ' + id;
+function addMarkerToList(lat, lng, id, image) {
+    const oeuvreText = lat + ' ' + lng + ' ' + id + ' ' + `<img src="${image}">`;
     listeOeuvres.push(oeuvreText);
     listeOeuvresId.push(id);
     console.log(listeOeuvres, listeOeuvresId);
