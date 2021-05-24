@@ -71,12 +71,6 @@ Template.creerParcours.helpers({
             };
         };
     },
-    /*objets: function () {
-        return Oeuvres.find({})
-    },
-    oeuvres: function () {
-        return listeOeuvres;
-    },*/
 });
 
 Template.creerParcours.events({
@@ -143,9 +137,7 @@ function addMarkerToList(lat, lng, id) {
     listeOeuvres.push(oeuvreText);
     listeOeuvresId.push(id);
     console.log(listeOeuvres, listeOeuvresId);
-    //alert(listeOeuvres);
     const li = document.createElement('li');
     li.innerHTML = oeuvreText;
     document.getElementById("listeParcours").appendChild(li);
-    // alert("Oeuvre added " + listeOeuvres.length + "Oeuvre id " + id);
 }
