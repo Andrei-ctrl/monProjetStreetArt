@@ -1,4 +1,5 @@
 import './descriptif.html';
+import './descriptif.css';
 
 import { Session } from 'meteor/session';
 

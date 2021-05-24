@@ -39,3 +39,20 @@ h4 {
 ol {
   font-family: FreeMono, monospace;
 }
+
+#retour {
+  background-image: url('https://cdn.icon-icons.com/icons2/1369/PNG/512/-arrow-back_90283.png');
+  border: black solid 1px;
+  width: 100px;
+  height: 40px;
+  text-indent: 30px;
+  border-radius: 40px;
+  background-size: 40px;
+  background-repeat: no-repeat ;
+  background-position: left;
+  top: 30px;
+  right: 30px;
+  border: rebeccapurple solid 2px;
+  font-family: FreeMono, monospace;
+  font-size: 15px;
+}
