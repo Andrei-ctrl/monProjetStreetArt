@@ -76,19 +76,22 @@ Template.creerParcours.helpers({
 Template.creerParcours.events({
     'click #confirmerParcours': function () {
         Swal.fire({
-            title: 'Avez-vous bien terminé la création de ce parcours',
-            confirmButtonText: 'Oui',
+            title: 'Entrez un titre',
+            input: 'text',
+            confirmButtonText: 'Enregistrer',
             showCancelButton: true,
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                    title: 'Votre parcours a bien été ajouté',
+                    title: 'Votre parcours ' + result.value + ' a bien été ajouté',
                     icon: 'success',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Démarrer le parcours'
                 })
+                //sauver liste d'ID d'oeuvre dans db
+                Meteor.call('ajouterParcours', result.value, listeOeuvresId);
             }
         })
     },
