@@ -7,11 +7,7 @@
     <h1>Vous pouvez ici créer des parcours en reliant les oeuvres de Street Art autour de vous !</h1>
     <br>
     <!-- Ce ul contient la liste des oeuvres -->
-    <ul>
-        {{#each oeuvres}}
-            {{> oeuvre }}
-        {{/each}}
-    </ul>
+    <ul id="listeParcours"></ul>
 
     <div class="map-container">
         {{#unless geolocationError}}

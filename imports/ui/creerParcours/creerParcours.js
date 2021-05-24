@@ -4,38 +4,79 @@ import './creerParcours.css';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 // importer fichier
-import { Oeuvres } from '../../api/collection_DB';
+import { Oeuvres } from '../../api/collection_DB.js';
 
 const Swal = require('sweetalert2');
 
-let listeOeuvres;
-let listeOeuvresId;
+let listeOeuvres = [];
+let listeOeuvresId = [];
+
+var MAP_ZOOM = 15;
+
+var firstRun = true;
+
+Meteor.startup(function () {
+    GoogleMaps.load();
+});
 
 Template.creerParcours.onCreated(function () {
-    listeOeuvres = [];
-    listeOeuvresId = [];
-    //Meteor.subscribe("oeuvres")
+    var self = this;
+
+    GoogleMaps.ready('map', function (map) {
+        var marker;
+
+        // Create and move the marker when latLng changes.
+        self.autorun(function () {
+            var latLng = Geolocation.latLng();
+            if (!latLng)
+                return;
+
+            // If the marker doesn't yet exist, create it.
+            if (!marker) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(latLng.lat, latLng.lng),
+                    map: map.instance
+                });
+            }
+            // The marker already exists, so we'll just change its position.
+            else {
+                marker.setPosition(latLng);
+            }
+
+            if (firstRun) {
+                // Center and zoom the map view onto the current position.
+                map.instance.setCenter(marker.getPosition());
+                map.instance.setZoom(MAP_ZOOM);
+                firstRun = false;
+            }
+        });
+
+        displayMarkers(map);
+
+    });
 });
 
 Template.creerParcours.helpers({
-    objets: function () {
-        return Oeuvres.find({})
-    }
-})
-
-
-Template.creerParcours.helpers({
-    oeuvres: function () {
-        //alert(listeOeuvres[listeOeuvres.length - 1].);
-        let ret = [];
-        listeOeuvres.forEach(oeuvres => {
-            ret.push({
-                text: oeuvres
-            })
-        });
-
-        return listeOeuvres;
+    geolocationError: function () {
+        var error = Geolocation.error();
+        return error && error.message;
     },
+    mapOptions: function () {
+        var latLng = Geolocation.latLng();
+        // Initialize the map once we have the latLng.
+        if (GoogleMaps.loaded() && latLng) {
+            return {
+                center: new google.maps.LatLng(latLng.lat, latLng.lng),
+                zoom: MAP_ZOOM
+            };
+        };
+    },
+    /*objets: function () {
+        return Oeuvres.find({})
+    },
+    oeuvres: function () {
+        return listeOeuvres;
+    },*/
 });
 
 Template.creerParcours.events({
@@ -63,7 +104,10 @@ Template.creerParcours.events({
                             'Ajouté',
                             'Votre parcours a été ajoutée.',
                             'success'
-                        )
+                        ).then((result) => {
+                            document.getElementById("listeParcours").innerHTML = "";
+                            location.reload();
+                        })
                     }
                 })
             }
@@ -75,70 +119,6 @@ Template.creerParcours.events({
     },
 });
 
-if (Meteor.isClient) {
-    var MAP_ZOOM = 15;
-
-    var firstRun = true;
-
-    Meteor.startup(function () {
-        GoogleMaps.load();
-    });
-
-    Template.creerParcours.onCreated(function () {
-        var self = this;
-
-        GoogleMaps.ready('map', function (map) {
-            var marker;
-
-            // Create and move the marker when latLng changes.
-            self.autorun(function () {
-                var latLng = Geolocation.latLng();
-                if (!latLng)
-                    return;
-
-                // If the marker doesn't yet exist, create it.
-                if (!marker) {
-                    marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(latLng.lat, latLng.lng),
-                        map: map.instance
-                    });
-                }
-                // The marker already exists, so we'll just change its position.
-                else {
-                    marker.setPosition(latLng);
-                }
-
-                if (firstRun) {
-                    // Center and zoom the map view onto the current position.
-                    map.instance.setCenter(marker.getPosition());
-                    map.instance.setZoom(MAP_ZOOM);
-                    firstRun = false;
-                }
-            });
-
-            displayMarkers(map);
-
-        });
-    });
-
-    Template.creerParcours.helpers({
-        geolocationError: function () {
-            var error = Geolocation.error();
-            return error && error.message;
-        },
-        mapOptions: function () {
-            var latLng = Geolocation.latLng();
-            // Initialize the map once we have the latLng.
-            if (GoogleMaps.loaded() && latLng) {
-                return {
-                    center: new google.maps.LatLng(latLng.lat, latLng.lng),
-                    zoom: MAP_ZOOM
-                };
-            }
-        }
-    });
-}
-
 function displayMarkers(map) {
     var listOeuvres = Oeuvres.find({}).fetch();
     console.log(listOeuvres);
@@ -149,24 +129,23 @@ function displayMarkers(map) {
             position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
             map: map.instance,
         });
-        const contentString = `<img src="${oeuvre.image}">`;
-        const infowindow = new google.maps.InfoWindow({
-            content: contentString,
-        });
-        marker.addListener('click', () => {
-            infowindow.open(map, marker);
-            addMarkerToList(oeuvre.lat, oeuvre.lng, contentString, oeuvre._id);
-            marker = marker.setIcon('http://maps.google.com/mapfiles/marker_orange.png');
-        });
-
+        google.maps.event.addListener(marker, 'click', (function(marker) {
+            return function() {
+                addMarkerToList(oeuvre.lat, oeuvre.lng, oeuvre._id);
+                marker.setIcon('http://maps.google.com/mapfiles/marker_orange.png');
+            }
+        })(marker));
     })
 }
 
-function addMarkerToList(lat, lng, contentString, id) {
-    const oeuvreText = lat + ' ' + lng + ' ' + contentString;
+function addMarkerToList(lat, lng, id) {
+    const oeuvreText = lat + ' ' + lng + ' ' + id;
     listeOeuvres.push(oeuvreText);
     listeOeuvresId.push(id);
+    console.log(listeOeuvres, listeOeuvresId);
     //alert(listeOeuvres);
-    alert("Oeuvre added " + listeOeuvres.length + "Oeuvre id " + id);
-    Template.creerParcours.__helpers.get('oeuvres').call();
+    const li = document.createElement('li');
+    li.innerHTML = oeuvreText;
+    document.getElementById("listeParcours").appendChild(li);
+    // alert("Oeuvre added " + listeOeuvres.length + "Oeuvre id " + id);
 }

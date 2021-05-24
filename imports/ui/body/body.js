@@ -14,9 +14,14 @@ import '../descriptif/descriptif.js';
 import '../creerParcours/creerParcours.js';
 import '../choisirParcours/choisirParcours.js';
 
-Template.body.events({
-    'click #wrapper'(event){
+import { Session } from 'meteor/session';
+
+Template.app_body.events({
+    'click #cta'(event){
     event.preventDefault();
+    const routeActuelle = FlowRouter.getRouteName();
+    console.log(routeActuelle);
+    Session.set('routeDOrigine', routeActuelle);
     FlowRouter.go('descriptif');
     }
 })

@@ -22,3 +22,26 @@ h3 {
   color: #FBC638;;
 }
 
+#contBouton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ajouterOeuvre {
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  margin-left: 19px;
+}
+
+#creerParcours {
+  display: inline-block;
+}
+
+#choisirParcours {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  margin-right: 19px;
+}
