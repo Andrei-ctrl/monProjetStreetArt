@@ -155,3 +155,11 @@ Template.creercompte.events({
     }
     return true;
   };
+
+
+  Template.register.events({
+    'click #retour'(event){
+    event.preventDefault();
+    FlowRouter.go('connexion');
+    }
+})

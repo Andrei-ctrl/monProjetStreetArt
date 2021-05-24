@@ -54,3 +54,10 @@ Template.connexion.events({
     return false;
   }
 });
+
+Template.login.events({
+  'click #retour'(event){
+  event.preventDefault();
+  FlowRouter.go('accueil');
+  }
+})
