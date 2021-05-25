@@ -14,3 +14,11 @@
     font-family: FreeMono, monospace;
     font-size: 15px;
 }
+
+.imageCSS {
+    border: solid 1px lightblue;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+  

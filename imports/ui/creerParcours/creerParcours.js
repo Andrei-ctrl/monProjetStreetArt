@@ -88,7 +88,7 @@ Template.creerParcours.events({
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Démarrer le parcours'
+                    confirmButtonText: 'Démarrer le parcours',
                 })
                 //sauver liste d'ID d'oeuvre dans db
                 Meteor.call('ajouterParcours', result.value, listeOeuvresId);
