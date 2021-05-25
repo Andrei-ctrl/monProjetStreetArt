@@ -87,9 +87,11 @@ if (Meteor.isClient) {
       const infowindow = new google.maps.InfoWindow({
         content: contentString,
       });
-      marker.addListener('click', () => {
-        infowindow.open(map, marker);
-      });
+      google.maps.event.addListener(marker, 'click', (function(marker) {
+        return function() {
+          infowindow.open(map, marker);
+        }
+    })(marker));
 
     })
   }
