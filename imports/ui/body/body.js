@@ -13,6 +13,7 @@ import '../ajouterOeuvre/ajouterOeuvre.js';
 import '../descriptif/descriptif.js';
 import '../creerParcours/creerParcours.js';
 import '../choisirParcours/choisirParcours.js';
+import '../afficherParcours/afficherParcours.js';
 
 import { Session } from 'meteor/session';
 
