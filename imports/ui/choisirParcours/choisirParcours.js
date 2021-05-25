@@ -30,23 +30,23 @@ function recupererEtAfficherParcours() {
         afficherParcours(parcours);
     });
     let listeOeuvres = Oeuvres.find({}).fetch();
-    listeOeuvres.forEach(oeuvres => {
-        afficherParcours(oeuvres);
+    listeOeuvres.forEach(oeuvre => {
+        afficherParcours(oeuvre);
     });
 }
 
-function afficherParcours(parcours, oeuvres) {
+function afficherParcours(parcours, oeuvre) {
     const li = document.createElement('li');
     li.innerHTML = parcours.titre;
-    if (parcours.idList == oeuvres.id) {
+    if (parcours.idList.includes(oeuvre.id)) {
         const div = document.createElement('div');
-        div.innerHTML = `<img src="${oeuvres.image}" class="imageCSS">`;
+        div.innerHTML = `<img src="${oeuvre.image}" class="imageCSS">`;
         //displayListeOeuvres(parcours.idList, li.innerHTML);
         document.getElementById("listeParcours").appendChild(div);
-    }
+    };
     //displayListeOeuvres(parcours.idList, li.innerHTML);
     document.getElementById("listeParcours").appendChild(li);
-}
+};
 
 /*function recupererEtAfficherOeuvres() {
     let listeOeuvres = Oeuvres.find({}).fetch();
