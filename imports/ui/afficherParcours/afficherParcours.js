@@ -78,15 +78,20 @@ Template.afficherParcours.events({
 });
 
 function afficherParcoursMap(map) {
-    //récupérer Id du parcours choisi à afficher depuis la page precédente (parcoursId)
-    //let parcoursId = vient de choisirParcours
-    //let parcours = Parcours.find(parcoursId);
+    //récupérer Id du parcours (parcoursId) choisi à afficher depuis la page precédente 
+
+    /*let parcoursId = vient de choisirParcours ou de démarrer le parcours dans créerParcours :
+    quand on clique sur le bouton dans une de ces pages, l'Id du parcours doit être retenu pour qu'il puisse être utilisé ensuie*/
+
+    /*let parcours = Parcours.find(parcoursId); C'est ça qu'on arrive pas: comment récupérer un 
+    objet à parir de son id dans une base de données ? Comment faire fonctionner ce findId ? */
+
     //let oeuvresIdListe = parcours.idList;
 
-    //Option 1 :
+    //Option 1 : soit récupérer les oeuvres dans la DB Oeuvres dans l'ordre sous forme de liste, les afficher et le relier
     //let listeOeuvres = Oeuvres.find(oeuvresIdListe).fetch();
 
-    //Option 2 :
+    //Option 2 : soit créer un tableau, soit le faire manuellement avec un forEach ?
     //let listeOeuvres = [];
 
     /*
@@ -96,12 +101,13 @@ function afficherParcoursMap(map) {
 
     });*/
 
+    // => Le problème est tjs le même, comment récupérer la liste des Id ?
+
     //Pour le moment on utilise juste le premier parcours de la DB
     
     //let listeParcours = Parcours.find({}).fetch();
     //let parcours = listeParcours[0];
     
-    //
 
     let listeOeuvres = Oeuvres.find({}).fetch();
     listeOeuvres.push(listeOeuvres[0]);
@@ -109,15 +115,14 @@ function afficherParcoursMap(map) {
 
     listeOeuvres.forEach(oeuvre => {
         oeuvresARelier.push({ lat: oeuvre.lat, lng: oeuvre.lng });
-
         marker = new google.maps.Marker({
             // Je distingue le marqueur de la position actuelle de la position des oeuvres
             icon: 'http://maps.google.com/mapfiles/marker_green.png',
             position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
             map: map.instance,
         });
-        const contentString = `<img src="${oeuvre.image}">`;
-        const infowindow = new google.maps.InfoWindow({
+            const contentString = `<img src="${oeuvre.image}">`;
+            const infowindow = new google.maps.InfoWindow({
           content: contentString,
         });
         google.maps.event.addListener(marker, 'click', (function(marker) {
@@ -144,3 +149,10 @@ function relierOeuvres(map, oeuvresARelier) {
       });
       flightPath.setMap(map);
 }
+
+/* Autres questions :
+--> ? oral au début du cours
+--> On a mis un bouton dans choisir parcours pour lancer la page car la fonction ne s'exécute pas sinon
+Comment faire ?
+--> Quand on ajoute un point, on doit recharger la page, comment éviter cela
+-->  */
