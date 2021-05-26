@@ -13,7 +13,6 @@ Template.choisirParcours.events({
     },
 });
 
-
 // Récupérer par l'id le titre du parcours et l'image de chaque oeuvre d'un parcours et les afficher sur cete page
 // A partir de ça, cliquer sur quelque chose qui nous affche le parcours sélectionné.
 
@@ -44,16 +43,15 @@ function afficherParcours(parcours) {
 };
 
 
-
-/*function afficherListeOeuvres(listeOeuvresIds, liElement) {
+function afficherListeOeuvres(listeOeuvresIds, liElement) {
     listeOeuvresIds.forEach(oeuvreId => {
         const oeuvre = Oeuvres.findOne({_id: oeuvreId});
-        const liImage = `<img src="${oeuvre.image}" class="imageCSS">`;
+        //const liImage = `<img src="${oeuvre.image}" class="imageCSS">`;
         const monImage = document.createElement('img');
-        monImage.setAttribute(src, oeuvre.image);
-        monImage.classList.add("mystyle");
-        liElement.appendChild(monImage);
+        //monImage.setAttribute(src, oeuvre.image);
+        //monImage.classList.add("mystyle");
+        //liElement.appendChild(monImage);
     });
-}*/
+}
 
 
