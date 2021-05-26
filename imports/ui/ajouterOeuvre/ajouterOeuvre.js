@@ -60,6 +60,8 @@ Template.ajouterOeuvre.events({
                           'Votre position actuelle (' + lat + ', ' + lng + ') a été ajoutée.',
                           'success'
                       )
+                  location.reload();
+                    
                   }
                 })
               }
