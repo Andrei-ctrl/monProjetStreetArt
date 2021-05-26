@@ -125,7 +125,7 @@ function afficherParcoursMap(map) {
             const infowindow = new google.maps.InfoWindow({
           content: contentString,
         });
-            google.maps.event.addListener(marker, 'click', (function(marker) {
+        google.maps.event.addListener(marker, 'click', (function(marker) {
             return function() {
                 //afficher la photo de l'oeuvre au simple click
                 infowindow.open(map, marker);
