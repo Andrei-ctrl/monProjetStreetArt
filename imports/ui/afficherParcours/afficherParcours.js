@@ -81,7 +81,7 @@ function afficherParcoursMap(map) {
     //récupérer Id du parcours (parcoursId) choisi à afficher depuis la page precédente 
 
     /*let parcoursId = vient de choisirParcours ou de démarrer le parcours dans créerParcours :
-    quand on clique sur le bouton dans une de ces pages, l'Id du parcours doit êtr retenu pour qu'ill puisse être utilisé ensuie*/
+    quand on clique sur le bouton dans une de ces pages, l'Id du parcours doit être retenu pour qu'il puisse être utilisé ensuie*/
 
     /*let parcours = Parcours.find(parcoursId); C'est ça qu'on arrive pas: comment récupérer un 
     objet à parir de son id dans une base de données ? Comment faire fonctionner ce findId ? */
