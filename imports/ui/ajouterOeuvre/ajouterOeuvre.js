@@ -64,8 +64,8 @@ Template.ajouterOeuvre.events({
                             //sauver liste d'ID d'oeuvre dans DB
                             location.reload();
         
-                    };
-                });
+                      };
+                    });
                   }
                 })
               }
