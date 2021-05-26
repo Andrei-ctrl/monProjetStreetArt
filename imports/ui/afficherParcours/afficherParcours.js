@@ -125,7 +125,7 @@ function afficherParcoursMap(map) {
             const infowindow = new google.maps.InfoWindow({
           content: contentString,
         });
-        google.maps.event.addListener(marker, 'click', (function(marker) {
+            google.maps.event.addListener(marker, 'click', (function(marker) {
             return function() {
                 infowindow.open(map, marker);
                 //changer couleur si l'oeuvre est vue

@@ -83,8 +83,8 @@ if (Meteor.isClient) {
         position: new google.maps.LatLng(oeuvre.lat, oeuvre.lng),
         map: map.instance,
       });
-      const contentString = `<img src="${oeuvre.image}">`;
-      const infowindow = new google.maps.InfoWindow({
+        const contentString = `<img src="${oeuvre.image}">`;
+        const infowindow = new google.maps.InfoWindow({
         content: contentString,
       });
       google.maps.event.addListener(marker, 'click', (function(marker) {
