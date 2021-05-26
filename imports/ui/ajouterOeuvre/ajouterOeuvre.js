@@ -58,10 +58,14 @@ Template.ajouterOeuvre.events({
                       Swal.fire(
                           'Ajouté',
                           'Votre position actuelle (' + lat + ', ' + lng + ') a été ajoutée.',
-                          'success'
-                      )
-                  location.reload();
-                    
+                          'success',
+                      ).then((resultConfirme) => {
+                        if (resultConfirme.isConfirmed) {
+                            //sauver liste d'ID d'oeuvre dans DB
+                            location.reload();
+        
+                    };
+                });
                   }
                 })
               }
