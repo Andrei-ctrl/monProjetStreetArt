@@ -127,9 +127,14 @@ function afficherParcoursMap(map) {
         });
             google.maps.event.addListener(marker, 'click', (function(marker) {
             return function() {
+                //afficher la photo de l'oeuvre au simple click
                 infowindow.open(map, marker);
+            }
+        })(marker));
+        google.maps.event.addListener(marker, 'dblclick', (function(marker) {
+            return function() {
                 //changer couleur si l'oeuvre est vue
-                marker.setIcon('http://maps.google.com/mapfiles/marker_orange.png');
+                marker.setIcon('http://maps.google.com/mapfiles/marker_grey.png');
             }
         })(marker));
     });
