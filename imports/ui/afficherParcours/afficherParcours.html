@@ -3,8 +3,6 @@
     <br>
     <h3>Voici ton parcours !</h3>
     <br>
-    <button id="afficherParcours">Afficher les parcours</button>
-    <br>
     <div class="map-container">
         {{#unless geolocationError}}
           {{> googleMap name="map" options=mapOptions}}

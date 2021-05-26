@@ -4,7 +4,7 @@ import './creerParcours.css';
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 // importer fichier
-import { Oeuvres } from '../../api/collection_DB.js';
+import { Oeuvres, Parcours } from '../../api/collection_DB.js';
 
 const Swal = require('sweetalert2');
 
@@ -89,12 +89,19 @@ Template.creerParcours.events({
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Démarrer le parcours',
-                })
-                //sauver liste d'ID d'oeuvre dans db
-                Meteor.call('ajouterParcours', result.value, listeOeuvresId);
-            }
-        })
-    },
+                }).then((resultConfirme) => {
+                    if (resultConfirme.isConfirmed) {
+                        //sauver liste d'ID d'oeuvre dans DB
+                        const ajoutId = Parcours.insert({
+                            titre: result.value,
+                            idList: listeOeuvresId
+                    });
+                    FlowRouter.go('afficherParcours', { _parcoursId: ajoutId });
+                };
+            });
+        };
+    });
+},
     'click #retour'(event) {
         event.preventDefault();
         FlowRouter.go('accueilLog');
