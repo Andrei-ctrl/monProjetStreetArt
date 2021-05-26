@@ -25,5 +25,6 @@ Template.accueilLog.events({
     'click #choisirParcours'(event){
         event.preventDefault();
         FlowRouter.go('choisirParcours');
+        location.reload();
     }
 })

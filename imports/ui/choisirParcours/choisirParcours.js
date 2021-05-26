@@ -30,6 +30,7 @@ Template.choisirParcours.helpers({
 
 function afficherParcours(parcours) {
     const li = document.createElement('li');
+    li.classList.add('styleListe');
     const monBouton = document.createElement('button');
     monBouton.classList.add('styleBouton');
     monBouton.addEventListener("click", function() {
