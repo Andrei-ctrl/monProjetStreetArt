@@ -124,7 +124,7 @@ function afficherParcoursMap(map) {
                 //changer couleur si l'oeuvre est vue
                 marker.setIcon('http://maps.google.com/mapfiles/marker_grey.png');
                 let compteur = 0;
-                compteur += 1/oeuvresIdListe.length;
+                compteur += 1 /parcours.idListe;
                 let elem = document.getElementById("myBar");
                 elem.style.width = compteur + "%";
                 //Ici on enlève le simple clic pour qu'on ne puisse plus ouvrir l'image une fois l'oeuvre vue

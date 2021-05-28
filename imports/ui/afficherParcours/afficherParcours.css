@@ -1,11 +1,12 @@
 #myProgress {
-  width: 60%;
+  width: 40%;
   background-color: lightgray;
-  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #myBar {
   width: 1%;
-  height: 30px;
-  background-color: lightgreen;
+  height: 20px;
+  background-color: rgb(74, 190, 74);
 }
