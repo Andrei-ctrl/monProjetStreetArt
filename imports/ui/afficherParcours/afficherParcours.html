@@ -3,6 +3,12 @@
     <br>
     <h3>Voici ton parcours !</h3>
     <br>
+    <div>    
+      {{#each id in images}}
+        <img src="{{id}}" alt="image" class="imageCSS">
+      {{/each}}
+  </div>
+    <br>
     <div id="myProgress">
       <div id="myBar"></div>
     </div>
