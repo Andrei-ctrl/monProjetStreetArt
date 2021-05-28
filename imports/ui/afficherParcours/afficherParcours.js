@@ -12,6 +12,8 @@ var MAP_ZOOM = 15;
 
 var firstRun = true;
 
+let compteur = 0;
+
 Meteor.startup(function () {
     GoogleMaps.load();
 });
@@ -123,8 +125,7 @@ function afficherParcoursMap(map) {
             return function() {
                 //changer couleur si l'oeuvre est vue
                 marker.setIcon('http://maps.google.com/mapfiles/marker_grey.png');
-                let compteur = 0;
-                compteur += 1 /parcours.idListe;
+                compteur += 100/ oeuvresIdListe.length;
                 let elem = document.getElementById("myBar");
                 elem.style.width = compteur + "%";
                 //Ici on enlève le simple clic pour qu'on ne puisse plus ouvrir l'image une fois l'oeuvre vue
