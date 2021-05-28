@@ -1,0 +1,11 @@
+#myProgress {
+  width: 60%;
+  background-color: lightgray;
+  display: inline-block;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: lightgreen;
+}

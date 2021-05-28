@@ -3,6 +3,10 @@
     <br>
     <h3>Voici ton parcours !</h3>
     <br>
+    <div id="myProgress">
+      <div id="myBar"></div>
+    </div>
+    <br>
     <div class="map-container">
         {{#unless geolocationError}}
           {{> googleMap name="map" options=mapOptions}}

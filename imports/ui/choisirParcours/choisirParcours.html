@@ -1,12 +1,28 @@
 <template name='choisirParcours'>
     <!-- Appel-->
-    {{ recupererEtAfficherParcours }}
     <button id="retour">Retour</button>
     <br>
     <h3>Choisis ton parcours !</h3>
     <h1>Vous pouvez ici choisir des parcours créés par d'autres utilisateurs </h1>
     <br>
     <!-- Ce ul contient la liste des oeuvres -->
-    <ol id="listeParcours"></ol>
+    <ol id="listeParcours">
+        <!-- parcours : nom du helper -->
+        {{#each parcours}}
+            {{> parcoursLi}}
+        {{/each}}
+    </ol>
     <br>
+</template>
+
+<template name="parcoursLi">
+    <li>
+        {{titre}} :
+        <button class="styleBouton"></button>
+        <!-- Pour chaque image dans mon tableau images (helpers) : le image au singulier = nom que je donne à chaque données de mon tableau -->
+        <!-- images fait référence au tableau de la ligne 41 -->
+        {{#each id in images}}
+            <img src="{{id}}" alt="image" class="imageCSS">
+        {{/each}}
+    </li>
 </template>

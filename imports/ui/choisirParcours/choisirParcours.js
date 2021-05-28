@@ -19,16 +19,43 @@ Template.choisirParcours.events({
 Template.choisirParcours.helpers({
     // Récupérer par l'id le titre du parcours et l'image de chaque oeuvre d'un parcours et les afficher sur cete page
     // A partir de ça, cliquer sur quelque chose qui nous affche le parcours sélectionné.
-    recupererEtAfficherParcours: function () {
+    parcours: function () {
         let listeParcours = Parcours.find({}).fetch();
         // Pour chaque parcours de cette liste de parcours, je l'affiche
-        listeParcours.forEach(parcours => {
+        
+        /*listeParcours.forEach(parcours => {
             afficherParcours(parcours);
-        });
+        });*/
+
+        return Parcours.find({})
     },
 });
 
-function afficherParcours(parcours) {
+//On crée ici un helper pour parcoursLi. Dans ce helper, on va récupérer un parcour. 
+//Des attributs sont liés à chacunes des instances / des parcours dans la db.
+Template.parcoursLi.helpers({
+    images: function() {
+        // Cette variable récupère la liste d'identifiants pour chaque parcours
+        const listeIds = Parcours.findOne( { _id: this._id } ).idList;
+        
+        const images = [];
+        listeIds.forEach(oeuvreId => {
+            const oeuvre = Oeuvres.findOne({_id: oeuvreId});
+            images.push(oeuvre.image)
+        });
+        return images
+    }
+})
+
+// On ajoute l'évènement ici car chaque bouton est dans le parcoursLi
+Template.parcoursLi.events({
+    "click button": function(event) {
+        event.preventDefault();
+        FlowRouter.go('afficherParcours', { _parcoursId: this._id });
+    }
+})
+
+/*function afficherParcours(parcours) {
     const li = document.createElement('li');
     li.classList.add('styleListe');
     const monBouton = document.createElement('button');
@@ -39,7 +66,7 @@ function afficherParcours(parcours) {
     });
     li.innerHTML = parcours.titre;
     li.appendChild(monBouton);
-    afficherListeOeuvres(parcours.idList, li.innerHTML);
+    afficherListeOeuvres(parcours.idList, li);
     document.getElementById("listeParcours").appendChild(li);
 };
 
@@ -47,12 +74,11 @@ function afficherParcours(parcours) {
 function afficherListeOeuvres(listeOeuvresIds, liElement) {
     listeOeuvresIds.forEach(oeuvreId => {
         const oeuvre = Oeuvres.findOne({_id: oeuvreId});
-        //const liImage = `<img src="${oeuvre.image}" class="imageCSS">`;
         const monImage = document.createElement('img');
-        //monImage.setAttribute(src, oeuvre.image);
-        //monImage.classList.add("mystyle");
-        //liElement.appendChild(monImage);
+        monImage.setAttribute('src', oeuvre.image);
+        monImage.classList.add("imageCSS");
+        liElement.appendChild(monImage);
     });
-}
+};*/
 
 
