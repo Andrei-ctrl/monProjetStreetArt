@@ -15,21 +15,29 @@
 }
 
 .imageCSS {
-    border: solid 1px lightblue;
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
+    border: solid 1px black;
+    height: 100px;
 }
 
 .styleBouton {
-    border: green solid 2px;
-    width: 120px;
-    height: 40px;
-    border-radius: 40px;
-    font-family: FreeMono, monospace;
-    font-size: 15px;
-    position: relative;
-    left: 60px;
+    background-color: lightskyblue;
+    border: solid 1px black;
+    color: white;
+    width: 140px;
+    height: 50px;
+    border-radius: 20px;
+    font-family: Impact, fantasy;
+    font-size: 17px;
+    display: block;
+    margin: auto;
+    background-image: url('https://cdn.icon-icons.com/icons2/771/PNG/512/route_icon-icons.com_64564.png');
+    background-size: 36px;
+    background-repeat: no-repeat ;
+    background-position: 90px;
+    text-align:left;
+    box-shadow: 2px 2px 0 grey;
+    text-shadow: -0.2px 0 black, 0 0.2px black,
+      0.2px 0 black, 0 -0.2px black
 }
 
 .styleBouton:before {
@@ -40,6 +48,3 @@
     line-height: 100px;
 }
 
-.imageCSS {
-    height: 100px;
-}

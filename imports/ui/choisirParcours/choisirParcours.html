@@ -18,11 +18,19 @@
 <template name="parcoursLi">
     <li>
         {{titre}} :
-        <button class="styleBouton"></button>
+        <br>
+        <br>
         <!-- Pour chaque image dans mon tableau images (helpers) : le image au singulier = nom que je donne à chaque données de mon tableau -->
         <!-- images fait référence au tableau de la ligne 41 -->
         {{#each id in images}}
             <img src="{{id}}" alt="image" class="imageCSS">
         {{/each}}
+        <br>    
+        <br>
+        <button class="styleBouton"></button>
+        <br>
+        <hr>
     </li>
+    <br>
+    <br>
 </template>
