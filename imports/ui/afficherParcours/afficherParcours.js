@@ -70,6 +70,20 @@ Template.afficherParcours.helpers({
     },
 });
 
+Template.afficherParcours.helpers({
+    images: function() {
+        // Cette variable récupère la liste d'identifiants pour chaque parcours
+        const listeIds = Parcours.findOne( { _id: this._id } ).idList;
+        
+        const images = [];
+        listeIds.forEach(oeuvreId => {
+            const oeuvre = Oeuvres.findOne({_id: oeuvreId});
+            images.push(oeuvre.image)
+        });
+        return images
+    }
+})
+
 Template.afficherParcours.events({
     'click #retour'(event) {
         event.preventDefault();
@@ -82,11 +96,11 @@ function afficherParcoursMap(map) {
     /*let parcoursId = vient de choisirParcours ou de démarrer le parcours dans créerParcours :
     quand on clique sur le bouton dans une de ces pages, l'Id du parcours doit être retenu pour qu'il puisse être utilisé ensuie*/
    
-    const parcoursId = FlowRouter.getParam('_parcoursId');
+    let parcoursId = FlowRouter.getParam('_parcoursId');
 
-    const parcours = Parcours.findOne({_id: parcoursId});
+    let parcours = Parcours.findOne({_id: parcoursId});
 
-    const oeuvresIdListe = parcours.idList;
+    let oeuvresIdListe = parcours.idList;
 
     //Option 2 : créer un tableau, soit le faire manuellement avec un forEach ?
     let listeOeuvres = [];
@@ -124,7 +138,7 @@ function afficherParcoursMap(map) {
                 //changer couleur si l'oeuvre est vue
                 marker.setIcon('http://maps.google.com/mapfiles/marker_grey.png');
                 let compteur = 0;
-                compteur += 1 /parcours.idListe;
+                compteur += 1 /parcours.idList;
                 let elem = document.getElementById("myBar");
                 elem.style.width = compteur + "%";
                 //Ici on enlève le simple clic pour qu'on ne puisse plus ouvrir l'image une fois l'oeuvre vue
