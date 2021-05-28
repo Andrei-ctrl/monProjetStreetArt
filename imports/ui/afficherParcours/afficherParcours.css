@@ -1,6 +1,7 @@
 #myProgress {
-  width: 40%;
+  width: 100%;
   background-color: lightgray;
+  max-width: 200px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -8,6 +9,34 @@
 #myBar {
   width: 1%;
   height: 20px;
-  background-color: rgb(74, 190, 74);
+  background-color: lawngreen;
+}
+
+.imageClass {
+  size: 100px;
+}
+
+.imageStyle {
+  height: 60px;
+  margin-right: 10px;
+  border: solid 1px black;
+  border-radius: 4px;
+}
+
+#boutonTerminé {
+  background-color: #F08080;
+  border: solid 1px black;
+  color: white;
+  width: 120px;
+  height: 50px;
+  border-radius: 20px;
+  font-family: Impact, fantasy;
+  font-size: 17px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  box-shadow: 2px 2px 0 grey;
+  text-shadow: -0.2px 0 black, 0 0.2px black,
+    0.2px 0 black, 0 -0.2px black
 }
 

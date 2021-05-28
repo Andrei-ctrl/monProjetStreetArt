@@ -14,6 +14,9 @@ var firstRun = true;
 
 let compteur = 0;
 
+// On le déclare en dehors des méthodes pour le rendre accessible partout
+let parcoursId;
+
 Meteor.startup(function () {
     GoogleMaps.load();
 });
@@ -74,8 +77,10 @@ Template.afficherParcours.helpers({
 
 Template.afficherParcours.helpers({
     images: function() {
+        //Je donne à la variable déclarée en tête de code l'ID contenu dans la route.
+        parcoursId = FlowRouter.getParam('_parcoursId');
         // Cette variable récupère la liste d'identifiants pour chaque parcours
-        const listeIds = Parcours.findOne( { _id: this._id } ).idList;
+        const listeIds = Parcours.findOne( { _id: parcoursId } ).idList;
         
         const images = [];
         listeIds.forEach(oeuvreId => {
@@ -91,14 +96,33 @@ Template.afficherParcours.events({
         event.preventDefault();
         FlowRouter.go('choisirParcours');
     },
+    'click #boutonTerminé'(event) {
+        event.preventDefault();
+        Swal.fire({
+            icon: 'question',
+            title: 'Voulez-vous mettre fin à ce parcours ?',
+            showCancelButton: true,
+            cancelButtonText: `Annuler`,
+            showConfirmButton: true,
+            confirmButtonText: `Choisir un parcours`,
+            showDenyButton: true,
+            denyButtonText: `Retour au menu`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+                FlowRouter.go('choisirParcours');
+                //compteur = 0;
+            } else if (result.isDenied) {
+                FlowRouter.go('accueilLog');
+                //compteur = 0;
+            };
+        });
+    },
 });
 
 function afficherParcoursMap(map) {
     //récupérer Id du parcours (parcoursId) choisi à afficher depuis la page precédente 
     /*let parcoursId = vient de choisirParcours ou de démarrer le parcours dans créerParcours :
-    quand on clique sur le bouton dans une de ces pages, l'Id du parcours doit être retenu pour qu'il puisse être utilisé ensuie*/
-   
-    let parcoursId = FlowRouter.getParam('_parcoursId');
+    quand on clique sur le bouton dans une de ces pages, l'Id du parcours doit être retenu pour qu'il puisse être utilisé ensuite*/
 
     let parcours = Parcours.findOne({_id: parcoursId});
 
@@ -144,13 +168,36 @@ function afficherParcoursMap(map) {
                 elem.style.width = compteur + "%";
                 //Ici on enlève le simple clic pour qu'on ne puisse plus ouvrir l'image une fois l'oeuvre vue
                 google.maps.event.clearInstanceListeners(marker);
-            }
+                //Chercher dans toutes les balises images celles qui ont une source = à...
+                let image = document.querySelector("img", `src='${oeuvre.image}`);
+                image.classList.add('imageClass');
+                // Si le compteur = 100, c'est-à-dire si toutes les oeuvres ont été confirrmées, le parcours est terminé : annuler, retour au menu, choisir parcours
+                if (compteur == 100) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Vous avez terminé ce parcours !',
+                        showCancelButton: true,
+                        showConfirmButton: true,
+                        confirmButtonText: `Choisir un parcours`,
+                        showDenyButton: true,
+                        denyButtonText: `Retour au menu`,
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            FlowRouter.go('choisirParcours');
+                            //compteur = 0;
+                        } else if (result.isDenied) {
+                            FlowRouter.go('accueilLog');
+                            //compteur = 0;
+                        };
+                    });
+                };
+            };
         })(marker));
     });
 
     relierOeuvres(map.instance, oeuvresARelier);
 
-}
+};
 
 function relierOeuvres(map, oeuvresARelier) {
       const flightPath = new google.maps.Polyline({

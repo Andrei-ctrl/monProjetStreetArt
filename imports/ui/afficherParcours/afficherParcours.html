@@ -3,15 +3,21 @@
     <br>
     <h3>Voici ton parcours !</h3>
     <br>
-    <div>    
+    <hr>
+    <br>
+    <p>    
       {{#each image in images}}
-        <img src="{{image}}" alt="image" class="imageCSS">
+        <img src="{{image}}" alt="image" class="imageStyle">
       {{/each}}
-  </div>
+    </p>
     <br>
     <div id="myProgress">
       <div id="myBar"></div>
     </div>
+    <br>
+    <button id="boutonTerminé">Terminer ce parcours</button>
+    <br>
+    <hr>
     <br>
     <div class="map-container">
         {{#unless geolocationError}}
