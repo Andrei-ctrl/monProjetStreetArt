@@ -9,4 +9,5 @@ Template.descriptif.events({
     const routeDOrigine = Session.get('routeDOrigine');
     FlowRouter.go(routeDOrigine);
     }
+    
 })
