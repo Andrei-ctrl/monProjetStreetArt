@@ -78,14 +78,6 @@ Template.ajouterOeuvre.events({
         
         /**/
     },
-    'click #ajouterOeuvreNewPos': function() {
-        let lat;
-        let lng;
-        let image;
-        const nouvelObjet = prompt('Entrez un nouvel élément !');
-        // Appel de la méthode
-        Meteor.call('ajouterOeuvre', lat, lng, image);
-    },
     'click #retour'(event){
     event.preventDefault();
     FlowRouter.go('accueilLog');
