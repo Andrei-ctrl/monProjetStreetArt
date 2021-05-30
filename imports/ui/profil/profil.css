@@ -1,16 +1,131 @@
 #retour {
-    background-image: url('https://cdn.icon-icons.com/icons2/1369/PNG/512/-arrow-back_90283.png');
-    border: black solid 1px;
-    width: 100px;
-    height: 40px;
-    text-indent: 30px;
-    border-radius: 40px;
-    background-size: 40px;
-    background-repeat: no-repeat ;
-    background-position: left;
-    top: 30px;
-    right: 30px;
-    border: rebeccapurple solid 2px;
-    font-family: FreeMono, monospace;
-    font-size: 15px;
+  display: inline-block;
+  border-radius: 4px;
+  border-color: lightgray;
+  background-color: lightgray;
+  border: none;
+  color: #000;
+  text-align: center;
+  font-size: 17px;
+  font-family: Impact, fantasy;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+#retour span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#retour span:after {
+  content: "\00AB";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+#retour:hover span {
+  padding-left: 25px;
+}
+
+#retour:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 10%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+#prf_container {
+  width: 770px;
+  height: 150px;
+  background: lightgray;
+  display: inline-block;
+  font-weight: 540;
+  font-size: 32;
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+#prf_info {
+  width: 820px;
+  height: 150px;
+  background: #fbc638;
+}
+
+#logout {
+  display: inline-block;
+  border-radius: 4px;
+  border-color: lightgray;
+  background-color: #fbc638;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  font-family: Impact, fantasy;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 40px;
+}
+
+#logout span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#logout span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#logout:hover span {
+  padding-right: 25px;
+}
+
+#logout:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#profile_h2 {
+  text-align: center;
+  width: 720px;
+  height: 56px;
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+#prf_h2 {
+  direction: ltr;
+  display: flex;
+  justify-content: center;
+  width: 820px;
+  height: 60px;
+  background: #ffff;
+  border: 1.5px solid black;
+  margin-bottom: 1px;
 }

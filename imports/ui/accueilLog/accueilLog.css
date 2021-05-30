@@ -1,69 +1,201 @@
 .map-container {
-    width: 100%;
-    max-width: 100%;
-    height: 500px;
-  }
+  width: 100%;
+  max-width: 100%;
+  height: 500px;
+}
 
 #profil {
   position: absolute;
+  margin-left: 180px;
+  justify-content: left;
   border: black solid 1px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDYwLjggNDYwLjgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ2MC44IDQ2MC44OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTIzMC40MzIsMGMtNjUuODI5LDAtMTE5LjY0MSw1My44MTItMTE5LjY0MSwxMTkuNjQxczUzLjgxMiwxMTkuNjQxLDExOS42NDEsMTE5LjY0MXMxMTkuNjQxLTUzLjgxMiwxMTkuNjQxLTExOS42NDENCgkJCVMyOTYuMjYxLDAsMjMwLjQzMiwweiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNNDM1Ljc1NSwzMzQuODljLTMuMTM1LTcuODM3LTcuMzE0LTE1LjE1MS0xMi4wMTYtMjEuOTQzYy0yNC4wMzMtMzUuNTI3LTYxLjEyNi01OS4wMzctMTAyLjkyMi02NC43ODQNCgkJCWMtNS4yMjQtMC41MjItMTAuOTcxLDAuNTIyLTE1LjE1MSwzLjY1N2MtMjEuOTQzLDE2LjE5Ni00OC4wNjUsMjQuNTU1LTc1LjIzMywyNC41NTVzLTUzLjI5LTguMzU5LTc1LjIzMy0yNC41NTUNCgkJCWMtNC4xOC0zLjEzNS05LjkyNy00LjcwMi0xNS4xNTEtMy42NTdjLTQxLjc5Niw1Ljc0Ny03OS40MTIsMjkuMjU3LTEwMi45MjIsNjQuNzg0Yy00LjcwMiw2Ljc5Mi04Ljg4MiwxNC42MjktMTIuMDE2LDIxLjk0Mw0KCQkJYy0xLjU2NywzLjEzNS0xLjA0NSw2Ljc5MiwwLjUyMiw5LjkyN2M0LjE4LDcuMzE0LDkuNDA0LDE0LjYyOSwxNC4xMDYsMjAuODk4YzcuMzE0LDkuOTI3LDE1LjE1MSwxOC44MDgsMjQuMDMzLDI3LjE2Nw0KCQkJYzcuMzE0LDcuMzE0LDE1LjY3MywxNC4xMDYsMjQuMDMzLDIwLjg5OGM0MS4yNzMsMzAuODI1LDkwLjkwNiw0Ny4wMiwxNDIuMTA2LDQ3LjAyczEwMC44MzMtMTYuMTk2LDE0Mi4xMDYtNDcuMDINCgkJCWM4LjM1OS02LjI2OSwxNi43MTgtMTMuNTg0LDI0LjAzMy0yMC44OThjOC4zNTktOC4zNTksMTYuNzE4LTE3LjI0MSwyNC4wMzMtMjcuMTY3YzUuMjI0LTYuNzkyLDkuOTI3LTEzLjU4NCwxNC4xMDYtMjAuODk4DQoJCQlDNDM2LjgsMzQxLjY4Miw0MzcuMzIyLDMzOC4wMjQsNDM1Ljc1NSwzMzQuODl6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=);
-  background-size: 40px;
-  background-repeat: no-repeat ;
+  background-size: 80px;
+  background-repeat: no-repeat;
   background-position: center;
   top: 30px;
   right: 30px;
 }
 
 h3 {
-  color: #FBC638;;
+  color: #fbc638;
 }
-
-#contBouton {
+h4 {
+  text-align: center;
+}
+#main_log {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color: #ecf0f1;
 }
 
-#ajouterOeuvre {
-  display: inline-block;
+.btn_acc_log {
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  margin: 1em 0.8em;
+  font-family: Impact, fantasy;
+}
+
+#ajouterOeuvre:after {
+  content: "";
+  display: block;
   position: absolute;
-  left: 0px;
-  margin-left: 19px;
-  width: 180px;
-  height: 40px;
-  color: black;
-  border: red solid 2px;
-  border-radius: 20px;
-  font-family: FreeMono, monospace;
-  font-weight: bold;
-
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
 }
-
-#creerParcours {
-  display: inline-block;
-  width: 180px;
-  height: 40px;
-  color: black;
-  border: #FBC638 solid 2px;
-  border-radius: 20px;
-  font-family: FreeMono, monospace;
-  font-weight: bold;
-}
-
-#choisirParcours {
-  display: inline-block;
+#ajouterOeuvre:before {
+  content: "";
+  display: block;
   position: absolute;
-  right: 0px;
-  margin-right: 19px;
-  width: 180px;
-  height: 40px;
-  color: black;
-  border: blue solid 2px;
-  border-radius: 20px;
-  font-family: FreeMono, monospace;
-  font-weight: bold;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+}
+
+#ajouterOeuvre:hover:after {
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+  width: 100%;
+  height: 100%;
+}
+#ajouterOeuvre:hover:before {
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+  width: 100%;
+  height: 100%;
+}
+
+#creerParcours:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
+}
+#creerParcours:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+}
+
+#creerParcours:hover:after {
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+  width: 100%;
+  height: 100%;
+}
+#creerParcours:hover:before {
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+  width: 100%;
+  height: 100%;
+}
+
+#choisirParcours:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
+}
+#choisirParcours:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+}
+
+#choisirParcours:hover:after {
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+  width: 100%;
+  height: 100%;
+}
+#choisirParcours:hover:before {
+  border-bottom-color: #fbc638;
+  border-right-color: #fbc638;
+  border-top-color: #fbc638;
+  border-left-color: #fbc638;
+  width: 100%;
+  height: 100%;
 }

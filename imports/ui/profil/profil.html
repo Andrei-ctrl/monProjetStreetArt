@@ -1,14 +1,20 @@
 <template name='profil'>
-    <button id="retour">Retour</button>
+    <button id="retour" style="vertical-align:middle"><span>Retour</span></button>
     <br>
     <br>
-    <h2>Le profil de {{ utilisateur }}</h2>
-    <ul>
-        <li>Nom d'utilisateur : {{ utilisateur }}</li>
-        <br>
-        <li>E-mail : {{ email }}</li>
-        <br>
-        <br>
-        <button id="logout">Se déconnecter</button>
-    </ul>
+    <div id="prf_h2">
+        <h2 id="profile_h2">Le profil de {{ utilisateur_prenom }}</h2>
+    </div>
+    <div id="prf_info">
+        <div id="prf_container">
+            <ul>
+                <li>Nom d'utilisateur : {{ utilisateur_prenom }} {{ utilisateur_nom }}</li>
+                <br>
+                <li>E-mail : {{ email }}</li>
+                <br>
+                <br>
+            </ul>
+        </div>
+    </div>
+    <button id="logout" style="vertical-align:middle"><span>Se déconnecter</span></button>
 </template>

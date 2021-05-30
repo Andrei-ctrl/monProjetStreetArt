@@ -1,26 +1,26 @@
 <template name='creerParcours'>
-    <button id="retour">Retour</button>
-    <br>
-    <h3>Crée ton parcours !</h3>
-    <br>
-    <h1>Créez des parcours entre les oeuvres de Street Art autour de vous !</h1>
-    <br>
-    <h4>Votre parcours :</h4>
-    <br>
-    <!-- Ce ul contient la liste des oeuvres -->
-    <ol id="listeParcours"></ol>
+  <button id="retour" style="vertical-align:middle"><span>Retour</span></button>
+  <br>
+  <h3>Crée ton parcours !</h3>
+  <br>
+  <h1>Créez des parcours entre les oeuvres de Street Art autour de vous !</h1>
+  <br>
+  <h4>Votre parcours :</h4>
+  <br>
+  <!-- Ce ul contient la liste des oeuvres -->
+  <ol id="listeParcours"></ol>
 
-    <!-- C'est le bouton qui permet d'enregistrer la lise des oeuvres / le parcours crée -->
-    <button id="confirmerParcours">Enregistrer le parcours</button>
-    <br>
-    <br>
-    <div class="map-container">
-        {{#unless geolocationError}}
-          {{> googleMap name="map" options=mapOptions}}
-        {{else}}
-          Geolocation failed: {{geolocationError}}
-        {{/unless}}
-    </div>
+  <!-- C'est le bouton qui permet d'enregistrer la lise des oeuvres / le parcours crée -->
+  <button id="confirmerParcours">Enregistrer le parcours</button>
+  <br>
+  <br>
+  <div class="map-container">
+    {{#unless geolocationError}}
+    {{> googleMap name="map" options=mapOptions}}
+    {{else}}
+    Geolocation failed: {{geolocationError}}
+    {{/unless}}
+  </div>
 </template>
 
 <!-- <template name="oeuvre">

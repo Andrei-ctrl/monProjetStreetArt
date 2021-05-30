@@ -1,18 +1,22 @@
 <template name='accueilLog'>
-    <h3>Bienvenue sur Street Art {{utilisateur}} !</h3>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <h3>Bienvenue sur Street Art, {{utilisateur}}!</h3>
+
     <h4>Vous pouvez ici ajouter des oeuvres de Street Art à la carte et créer des parcours entre elles !</h4>
-    <br>
-    <button id="profil"></button>
-    <br> <br>
-    <div id="contBouton">
-        <button id='ajouterOeuvre'>Ajoutes une oeuvre à la carte</button> 
-        <button id='creerParcours'>Crée ton parcours</button>
-        <button id='choisirParcours'>Choisis un parcours existant</button>
+    <div id="main_log_profile">
+        <button id="profil"></button>
+    </div>
+    <div id="main_log">
+        <div id="contBouton">
+            <button id='ajouterOeuvre' class="btn_acc_log">Ajoutes une oeuvre à la carte</button>
+            <button id='creerParcours' class="btn_acc_log">Crée ton parcours</button>
+            <button id='choisirParcours' class="btn_acc_log">Choisis un parcours existant</button>
+        </div>
     </div>
     <br>
     <br>
     <br>
     {{>map}}
 </template>
-
-

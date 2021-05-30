@@ -1,16 +1,125 @@
 #retour {
-    background-image: url('https://cdn.icon-icons.com/icons2/1369/PNG/512/-arrow-back_90283.png');
-    border: black solid 1px;
-    width: 100px;
-    height: 40px;
-    text-indent: 30px;
-    border-radius: 40px;
-    background-size: 40px;
-    background-repeat: no-repeat ;
-    background-position: left;
-    top: 30px;
-    right: 30px;
-    border: rebeccapurple solid 2px;
-    font-family: FreeMono, monospace;
-    font-size: 15px;
+  display: inline-block;
+  border-radius: 4px;
+  border-color: lightgray;
+  background-color: lightgray;
+  border: none;
+  color: #000;
+  text-align: center;
+  font-size: 17px;
+  font-family: Impact, fantasy;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+#retour span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#retour span:after {
+  content: "\00AB";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+#retour:hover span {
+  padding-left: 25px;
+}
+
+#retour:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+#create_account {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #fbc638;
+  border: none;
+  color: #000;
+  text-align: center;
+  font-size: 17px;
+  font-family: Impact, fantasy;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 25px;
+}
+
+#create_account span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#create_account span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#create_account:hover span {
+  padding-right: 25px;
+}
+
+#create_account:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn-lg {
+  display: inline-block;
+  border-radius: 4px;
+  border-color: lightgray;
+  background-color: #fbc638;
+  border: none;
+  color: #000;
+  text-align: center;
+  font-size: 17px;
+  font-family: Impact, fantasy;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-top: 40px;
+}
+
+.btn-lg span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-lg span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn-lg:hover span {
+  padding-right: 25px;
+}
+
+.btn-lg:hover span:after {
+  opacity: 1;
+  right: 0;
 }

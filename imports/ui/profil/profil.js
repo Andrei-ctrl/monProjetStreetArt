@@ -2,7 +2,8 @@ import './profil.html';
 import './profil.css';
 
 Template.profil.helpers({
-    utilisateur: () => Meteor.user().username,
+    utilisateur_prenom: () => Meteor.user().profile.first_name,
+    utilisateur_nom: () => Meteor.user().profile.last_name,
     email: () => Meteor.user().emails[0].address,
 })
 

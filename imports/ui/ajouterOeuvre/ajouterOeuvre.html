@@ -1,12 +1,16 @@
 <template name='ajouterOeuvre'>
-    <button id="retour">Retour</button>
+    <button id="retour" style="vertical-align:middle"><span>Retour</span></button>
     <br>
     <h3>Ajoutes une oeuvre à la carte !</h3>
     <h4>Vous pouvez ici ajouter des oeuvres de Street Art à la carte et créer des parcours entre elles !</h4>
     <br>
-    <button id="ajouterOeuvrePActuelle">Ajouter une oeuvre à ma position actuelle</button>
+    <div id="aj_ouv">
+        <button id="ajouterOeuvrePActuelle">Ajouter une oeuvre à ma position actuelle</button>
+    </div>
     <br> <br>
     {{>map}}
     <br>
+    <h5> Choisissez vous-même la position de l'oeuvre sur la carte</h5>
+    <button id='ajouterOeuvreNewPos'>Ajouter une oeuvre à la position séléctionnée</button>
+    <br>
 </template>
-
